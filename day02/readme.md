@@ -10,6 +10,44 @@
 
 文件所在文件夹得绝对路径
 
+## Moduls模块系统
+
++ CommonJS(NODE)
+
+  - 引模块 require(''), 原生的模块直接写名字就可以, 如果文件模块必须要写路径
+  - exports
+    是个对象, 一个页面可以出现多次, 用的时候要".",如:
+``` js
+// ./src/a.js
+const A = 123
+exports.num = A
+
+/*
+exports ==> {
+num: A
+}
+*/
+
+// 15_module.js
+const a = require('./src/a.js')
+// a => a.js 中的 exports对象
+console.log(a.num) //123
+```
+  - module.exports
+    一个页面只出现一次, 用的时候不需要".",如:
+``` js
+// ./src/b.js
+const b = 'hello'
+module.exports = b
+// 15_module.js
+const b = require('./src/b.js')
+console.log(b)  // hello
+```
++ CMD
++ AMD
++ ES6
+
+
 ## HTTP
 
 ### createServer
@@ -261,6 +299,8 @@ fs.writeFileSync('./src/test.txt', '你好,世界', {
 
 #### fs.open()
 
+#### fs.read()
+
 + 一参：fd，必须是open方法使用的回调函数中返回的文件描述符
 + 二参：buffer，一个Buffer对象，指定将文件数据读取到哪个缓存区中
 + 三参：offset，指定向缓存区中写入数据时的开始写入位置（以字节为单位）
@@ -269,3 +309,60 @@ fs.writeFileSync('./src/test.txt', '你好,世界', {
 + 六参：callback，function(err,bytesRead,buffer){}
   - bytesRead，一个整数值，代表实际读取的字节数
   - buffer，被读取的缓存区对象
+
+### 文件夹操作
+
+#### fs.mkdir()
+
+创建文件夹,
+
+``` js
+const fs = require('fs')
+
+fs.mkdir('./src/dir', err => {
+  if(!err){
+    console.log('创建目录成功')
+  }
+})
+```
+
+#### fs.readdir()
+
+读取目录
+
+``` js
+fs.readdir('./src', (err, files) => {
+  if(!err){
+    console.log(files)
+  }
+})
+```
+
+### fs.stat
+
+查看文件的信息
++ 一参: 路径
++ 二参: callback
+  - err
+  - stats
+    - stats.isFile()  是否是文件
+    - stats.isDirectory()  是否是文件夹
+
+``` js
+fs.readdir('./src', (err, files) => {
+  if(!err){
+    console.log(files)
+    ;(function iterate(i){
+      if(i===files.length) return
+      let _path = './src/' + files[i]
+      console.log(_path)
+      fs.stat(_path, (err, stats) => {
+        if(!err){
+          console.log(stats.isFile())
+          iterate(i+1)
+        }
+      })
+    })(0)
+  }
+})
+```
