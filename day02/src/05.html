@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <button id="btn">请求</button>
+  <script>
+    btn.onclick = function(){
+      var xhr = new XMLHttpRequest()
+      xhr.open('get', 'http://192.168.0.21:3000/', true)
+      xhr.send()
+      xhr.onreadystatechange = function(){
+        if(xhr.readyState === 4){
+          console.log(status)
+          if(xhr.status === 200){
+            var res = xhr.responseText
+            document.body.innerHTML += '<h1>'+res+'</h1>'
+          }
+        }
+      }
+    }
+  </script>
+</body>
+</html>

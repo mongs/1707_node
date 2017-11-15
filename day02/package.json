@@ -1,0 +1,15 @@
+{
+  "name": "day02",
+  "version": "1.0.0",
+  "description": "接受的参数是个回调函数callback",
+  "main": "01_server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "cheerio": "^1.0.0-rc.2"
+  }
+}
