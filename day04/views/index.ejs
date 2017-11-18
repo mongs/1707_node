@@ -1,0 +1,12 @@
+<%- include head.ejs %>
+
+index
+<h1>
+    <%= title %>
+</h1>
+
+<% for(let i=0;i<students.length;i++){ %>
+  <div><%= students[i] %></div>
+<% } %>
+
+<%- include foot.ejs %>
