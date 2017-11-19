@@ -4,7 +4,8 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 
 var index = require('./routes/index');
-var users = require('./routes/users');
+var album = require('./routes/album');
+var upload = require('./routes/upload');
 
 var app = express();
 
@@ -15,9 +16,14 @@ app.set('view engine', 'ejs');
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/albums',express.static(path.join(__dirname, 'albums')));
 
 
+app.get('/album/:name', album)
+app.get('/upload', upload.showUpload)
 app.get('/', index)
+
+app.post('/upload', upload.upload)
 
 
 // catch 404 and forward to error handler
