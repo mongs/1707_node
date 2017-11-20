@@ -1,8 +1,20 @@
 const express = require('express')
 const Router = express.Router()
 
+Router.use((req, res, next) => {
+	if(req.url === "/login") return next()
+	const blog_admin_cookie = req.cookies.blog_admin_cookie
+	// 如果没有cookie 跳到登录页面
+	if(!blog_admin_cookie){
+		res.redirect('/admin/login')  // 重定向
+	}
+	next()
+})
+
 Router.get('/', require('../controllers/index'))
 Router.get('/login', require('../controllers/login'))
+Router.get('/type_add', require('../controllers/type_add').showTypeAdd)
+Router.post('/type_add', require('../controllers/type_add').typeAdd)
 
 module.exports = Router
 /**

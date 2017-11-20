@@ -1,3 +1,4 @@
+<script src="/js/cookie.js"></script>
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
@@ -38,11 +39,11 @@
                 <!-- 登录以后才显示 -->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown">
-                        用户名
+                        <span id="name">用户名</span>
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="" class="text-center">退出登录</a></li>
+                        <li><a href="/user/logout" class="text-center">退出登录</a></li>
                     </ul>
                 </li>
             </ul>
