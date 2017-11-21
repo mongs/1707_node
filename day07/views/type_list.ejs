@@ -1,0 +1,35 @@
+<%- include base/head.ejs %>
+<%- include base/nav.ejs %>
+
+<div class="container">
+    <table class="table table-responsive table-bordered">
+        <thead>
+            <tr>
+                <th>序号</th>
+                <th>id</th>
+                <th>分类</th>
+                <th>添加时间</th>
+                <th>更新时间</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(let i=0,len=types.length;i<len;i++){ %>
+            <tr>
+                <td><%= i+1 %></td>
+                <td><%= types[i]._id %></td>
+                <td><%= types[i].type_name %></td>
+                <td><%= types[i].edit_time %></td>
+                <td><%= types[i].add_time %></td>
+                <td>
+                    <a href="/admin/type_edit?type_name=<%= types[i].type_name %>&id=<%= types[i]._id %>" class="btn btn-primary btn-sm">修改</a>
+                    <a href="/admin/type_delete?id=<%= types[i]._id %>" class="btn btn-danger btn-sm">删除</a>
+                </td>
+            </tr>
+        <% } %>
+        </tbody>
+    </table>
+</div>
+<script src="/js/layer.js"></script>
+<script src="/js/type_add.js"></script>
+<%- include base/foot.ejs %>
