@@ -18,7 +18,6 @@ exports.showTypeEdit = (req, res) => {
  * @param res
  */
 exports.typeEdit = (req, res) => {
-	console.log(req.body)
 	const type_name = req.body.type
 	const _id = req.body._id
 	Type.update({_id},{type_name,edit_time: Date.now()}).then(doc => {
