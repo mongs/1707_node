@@ -20,6 +20,8 @@ Router.get('/type_delete', require('../controllers/type_delete'))
 Router.get('/type_edit', require('../controllers/type_edit').showTypeEdit)
 Router.post('/type_edit', require('../controllers/type_edit').typeEdit)
 Router.get('/article_add', require('../controllers/article_add').showArticleAdd)
+Router.post('/article_add', require('../controllers/article_add').articleAdd)
+Router.get('/article_list', require('../controllers/article_list'))
 
 module.exports = Router
 /**
