@@ -28,7 +28,7 @@
                     <td><%= articles[i].create_time %></td>
                     <td><%= articles[i].update_time %></td>
                     <td>
-                        <a href="" class="btn btn-xs btn-default"> 查看详情 </a>
+                        <a href="/admin/article_info?_id=<%= articles[i]._id %>" class="btn btn-xs btn-default"> 查看详情 </a>
                         <a href="" class="btn btn-xs btn-primary">修改</a>
                         <a href="" class="btn btn-xs btn-danger">删除</a>
                     </td>

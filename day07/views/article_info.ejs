@@ -1,0 +1,16 @@
+<%- include base/head.ejs %>
+<%- include base/nav.ejs %>
+
+<div class="container">
+    <h3 class="text-center"><%= article.title %></h3>
+    <p>分类: <span><%= article.type_name.type_name %></span>  编辑时间: <span><%= article.update_time %></span></p>
+    <img src="<%= article.img %>" alt="">
+    <div id="content">
+        <%= article.content %>
+    </div>
+</div>
+<script>
+  // alert($('#content').text())
+  $('#content').html($('#content').text())
+</script>
+<%- include base/foot.ejs %>

@@ -22,7 +22,7 @@ Router.post('/type_edit', require('../controllers/type_edit').typeEdit)
 Router.get('/article_add', require('../controllers/article_add').showArticleAdd)
 Router.post('/article_add', require('../controllers/article_add').articleAdd)
 Router.get('/article_list', require('../controllers/article_list'))
-
+Router.get('/article_info', require('../controllers/article_info'))
 module.exports = Router
 /**
  /admin   欢迎     ->   index

@@ -12,12 +12,10 @@ const showArticleList = (req, res) => {
 	 * 第二个参数是  关联  集合 中  要拿过来的字段
 	 */
 	Article.find().populate('type_name','type_name').then(docs => {
-		console.log(docs)
 		res.render('article_list', {
 			articles: docs
 		})
 	})
-
 }
 
 module.exports = showArticleList
