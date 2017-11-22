@@ -13,6 +13,8 @@ Router.use((req, res, next) => {
 	// console.log(req.session.username)
 	if(req.session && req.session.username){ // 登录过
 		datas.username = req.session.username
+	}else{
+		datas.username = ''
 	}
 	next()
 })
@@ -37,7 +39,7 @@ Router.get('/logout', (req, res) => {
 			res.json({code: 1, msg: '退出登录失败'})
 		}else{
 			console.log(req.session)
-			datas.username = ''
+			// datas.username = ''
 			res.json({code: 0, msg: '退出登录成功'})
 		}
 	})
