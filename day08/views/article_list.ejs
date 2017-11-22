@@ -1,0 +1,40 @@
+<%- include base/head.ejs %>
+<%- include base/nav.ejs %>
+
+<div class="container">
+    <table class="table table-responsive table-bordered">
+        <thead>
+            <tr>
+                <th>序号</th>
+                <th>id</th>
+                <th>头图</th>
+                <th>标题</th>
+                <th>分类</th>
+                <th>添加时间</th>
+                <th>更新时间</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(let i=0,len=articles.length;i<len;i++){ %>
+                <tr>
+                    <td><%= i+1 %></td>
+                    <td><%= articles[i]._id %></td>
+                    <td>
+                        <img width="80" src="<%= articles[i].img %>" alt="">
+                    </td>
+                    <td><%= articles[i].title %></td>
+                    <td><%= articles[i].type_name.type_name %></td>
+                    <td><%= articles[i].create_time %></td>
+                    <td><%= articles[i].update_time %></td>
+                    <td>
+                        <a href="/admin/article_info?_id=<%= articles[i]._id %>" class="btn btn-xs btn-default"> 查看详情 </a>
+                        <a href="" class="btn btn-xs btn-primary">修改</a>
+                        <a href="" class="btn btn-xs btn-danger">删除</a>
+                    </td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+</div>
+<%- include base/foot.ejs %>
