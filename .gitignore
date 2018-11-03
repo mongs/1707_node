@@ -6,6 +6,9 @@ package-lock.json
 yarn.lock
 coverage/
 .idea/
+.vscode
+.project
+.atom
 run/
 .DS_Store
 *.sw*
