@@ -148,3 +148,12 @@ $ db.users.find();
 ``` js
 const url = 'mongodb://admin:111111@localhost:27017'
 ```
+
+## egg mongodb
+
+使用模块`egg-mongo-native`
+
+[egg-mongo-native文档](https://www.npmjs.com/package/egg-mongo-native)
+
+[egg-mongo-native中文文档](https://github.com/brickyang/egg-mongo-native/blob/master/README.zh_CN.md)
+

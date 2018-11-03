@@ -24,8 +24,17 @@ module.exports = appInfo => {
     maxFiles: 1000,
   };
 
-  // add your config here
-  config.middleware = [ 'auth' ];
+  // mongodb
+  config.mongo = {
+    client: {
+      host: '127.0.0.1',
+      port: '27017',
+      name: 'egg-test',
+      user: 'eggAdmin',
+      password: '111111',
+      options: {},
+    },
+  };
 
   return config;
 };

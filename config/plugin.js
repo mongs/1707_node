@@ -11,3 +11,8 @@ exports.public = {
   enable: true,
   package: 'egg-public',
 };
+
+exports.mongo = {
+  enable: true,
+  package: 'egg-mongo-native',
+};
