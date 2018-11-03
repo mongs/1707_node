@@ -106,3 +106,39 @@ $ db.users.insert({username: 'wally'})
 // 查看所有数据
 $ db.users.find();
 ```
+
+## 数据库角色
+
+### 1. 数据库用户角色
+
++ read
++ readWrite
+
+### 2. 数据库管理角色
+
++ dbAdmin
++ dbOwner
++ userAdmin
+
+### 3. 集群管理角色:
+
++ clusterAdmin
++ clusterManager
++ clusterMonitor
++ hostManager
+
+### 4. 备份恢复角色
+
++ backup
++ restore
+
+### 5. 所有数据库角色
+
++ readAnyDatabase
++ readWriteAnyDatabase
++ userAdminAnyDatabase
++ dbAdminAnyDatabase
+
+### 6. 超级用户角色
+
++ root
