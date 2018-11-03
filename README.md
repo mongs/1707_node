@@ -1,6 +1,6 @@
 ## MongoDB 
 
-### 权限管理
+### 一、权限管理
 
 #### 1. 创建超级管理员
 
@@ -69,7 +69,7 @@ $ mongo egg-test -u eggAdmin -p 111111
 // 
 ```
 
-### MongoDB 命令
+### 二、MongoDB 命令
 
 ``` bash
 // 显示所有数据库
@@ -107,38 +107,44 @@ $ db.users.insert({username: 'wally'})
 $ db.users.find();
 ```
 
-## 数据库角色
+### 三、数据库角色
 
-### 1. 数据库用户角色
+#### 1. 数据库用户角色
 
 + read
 + readWrite
 
-### 2. 数据库管理角色
+#### 2. 数据库管理角色
 
 + dbAdmin
 + dbOwner
 + userAdmin
 
-### 3. 集群管理角色:
+#### 3. 集群管理角色:
 
 + clusterAdmin
 + clusterManager
 + clusterMonitor
 + hostManager
 
-### 4. 备份恢复角色
+#### 4. 备份恢复角色
 
 + backup
 + restore
 
-### 5. 所有数据库角色
+#### 5. 所有数据库角色
 
 + readAnyDatabase
 + readWriteAnyDatabase
 + userAdminAnyDatabase
 + dbAdminAnyDatabase
 
-### 6. 超级用户角色
+#### 6. 超级用户角色
 
 + root
+
+### 四、连接数据库
+
+``` js
+const url = 'mongodb://admin:111111@localhost:27017'
+```
